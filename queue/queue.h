@@ -11,4 +11,6 @@ class Queue{
         T pop();
         bool isEmpty();
         void print();
+        void queueAsc();
+        void queueDesc();
 };
