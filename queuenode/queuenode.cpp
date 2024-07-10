@@ -36,7 +36,7 @@ Q QueueNode<Q>::getData(){
 
 template<class Q>
 void QueueNode<Q>::print(){
-    cout<<this->data<<endl; //solo para datos simples
+    cout<<this->data<<endl;
 }
 template <class Q>
 QueueNode<Q>::~QueueNode(){
