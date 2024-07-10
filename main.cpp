@@ -1,5 +1,6 @@
 #include <iostream>
 #include "./stack/stack.cpp"
+#include "./queue/queue.cpp"
 
 
 using namespace std;
