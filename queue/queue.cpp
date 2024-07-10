@@ -1,13 +1,13 @@
 #include<iostream>
 #include "./queue.h"
-template<class T>
-bool Queue<T>::isEmpty(){
+template<class Q>
+bool Queue<Q>::isEmpty(){
     return this->head==NULL;
 }
-template<class T>
-void Queue<T>::push(T data){
+template<class Q>
+void Queue<Q>::push(Q data){
        
-        Node <T> *node = new Node<T>(data,NULL);
+        QueueNode <Q> *node = new QueueNode<Q>(data,NULL);
          if(isEmpty()){
             head=node;
             tail=node;
@@ -20,35 +20,36 @@ void Queue<T>::push(T data){
    
 }
 
-template<class T>
-T Queue<T>::pop(){
-         T data;
+template<class Q>
+Q Queue<Q>::pop(){
+         Q data;
          if(isEmpty()) return data;
-        Node <T> *node = head;
+        QueueNode <Q> *node = head;
         head=head->getNextNode();
         data = node->getData();
         delete node;
         this->length--;
         return data;
 }
-template<class T>
-void Queue<T>::print(){
+template<class Q>
+void Queue<Q>::print(){
 
       while(!isEmpty()) {
 
        std::cout<<pop()<<endl;
       }
 }
-template<class T>
-int Queue<T>::getLength(){
+template<class Q>
+int Queue<Q>::getLength(){
     return this->length;
 }
 
-template<class T>
-void Queue<T>::queueAsc() {
-    Queue<T> tempQueue;
+// Funcion para ordenar la cola en orden ascedente utilizando una cola auxiliar
+template<class Q>
+void Queue<Q>::queueAsc() {
+    Queue<Q> tempQueue;
     while (!isEmpty()) {
-        T temp = pop();
+        Q temp = pop();
         while (!tempQueue.isEmpty() && tempQueue.head->getData() > temp) {
             push(tempQueue.pop());
         }
@@ -59,11 +60,13 @@ void Queue<T>::queueAsc() {
     }
 }
 
-template<class T>
-void Queue<T>::queueDesc() {
-    Queue<T> tempQueue;
+// Funcion para ordenar la cola en orden descedente utilizando una cola auxiliar
+
+template<class Q>
+void Queue<Q>::queueDesc() {
+    Queue<Q> tempQueue;
     while (!isEmpty()) {
-        T temp = pop();
+        Q temp = pop();
         while (!tempQueue.isEmpty() && tempQueue.head->getData() < temp) {
             push(tempQueue.pop());
         }
