@@ -43,3 +43,33 @@ template<class T>
 int Queue<T>::getLength(){
     return this->length;
 }
+
+template<class T>
+void Queue<T>::queueAsc() {
+    Queue<T> tempQueue;
+    while (!isEmpty()) {
+        T temp = pop();
+        while (!tempQueue.isEmpty() && tempQueue.head->getData() > temp) {
+            push(tempQueue.pop());
+        }
+        tempQueue.push(temp);
+    }
+    while (!tempQueue.isEmpty()) {
+        push(tempQueue.pop());
+    }
+}
+
+template<class T>
+void Queue<T>::queueDesc() {
+    Queue<T> tempQueue;
+    while (!isEmpty()) {
+        T temp = pop();
+        while (!tempQueue.isEmpty() && tempQueue.head->getData() < temp) {
+            push(tempQueue.pop());
+        }
+        tempQueue.push(temp);
+    }
+    while (!tempQueue.isEmpty()) {
+        push(tempQueue.pop());
+    }
+}
