@@ -1,14 +1,14 @@
-#include "../nodo/nodo.cpp"
-template<class T>
+#include "../queuenode/queuenode.cpp"
+template<class Q>
 class Queue{
     private:
-        Node<T> *head=NULL;
-        Node<T> *tail=NULL;
+        QueueNode<Q> *head=NULL;
+        QueueNode<Q> *tail=NULL;
         int length=0;
     public:
         int getLength();
-        void push(T);
-        T pop();
+        void push(Q);
+        Q pop();
         bool isEmpty();
         void print();
         void queueAsc();
