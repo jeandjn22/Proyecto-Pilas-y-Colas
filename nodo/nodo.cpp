@@ -36,12 +36,11 @@ T Node<T>::getData(){
 
 template<class T>
 void Node<T>::print(){
-    cout<<this->data<<endl; //solo para datos simples
+    cout<<this->data<<endl; 
 }
 template <class T>
 Node<T>::~Node(){
     next=NULL;
 }
-
 
 
