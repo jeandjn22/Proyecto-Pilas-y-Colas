@@ -7,7 +7,7 @@ bool Queue<Q>::isEmpty(){
 template<class Q>
 void Queue<Q>::push(Q data){
        
-        QueueNode <Q> *node = new QueueNode<Q>(data,NULL);
+        QNode <Q> *node = new QNode<Q>(data,NULL);
          if(isEmpty()){
             head=node;
             tail=node;
@@ -24,7 +24,7 @@ template<class Q>
 Q Queue<Q>::pop(){
          Q data;
          if(isEmpty()) return data;
-        QueueNode <Q> *node = head;
+        QNode <Q> *node = head;
         head=head->getNextNode();
         data = node->getData();
         delete node;
@@ -39,6 +39,8 @@ void Queue<Q>::print(){
        std::cout<<pop()<<endl;
       }
 }
+
+
 template<class Q>
 int Queue<Q>::getLength(){
     return this->length;
