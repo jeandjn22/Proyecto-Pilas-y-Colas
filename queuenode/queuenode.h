@@ -1,14 +1,14 @@
 template<class Q>
-class QueueNode{
+class QNode{
     private:
         Q data;
-        QueueNode<Q> *next=NULL;
+        QNode<Q> *next=NULL;
     public:
-        QueueNode(Q,QueueNode<Q>*);
-        ~QueueNode();
-        QueueNode<Q>* getNextNode();
+        QNode(Q,QNode<Q>*);
+        ~QNode();
+        QNode<Q>* getNextNode();
         void setData(Q);
         Q getData();
-        void setNextNode(QueueNode<Q>*);
+        void setNextNode(QNode<Q>*);
         void print();
 };
