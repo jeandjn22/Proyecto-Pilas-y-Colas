@@ -3,42 +3,42 @@
 using namespace std;
 
 template <class Q>
-QueueNode<Q>::QueueNode(Q data, QueueNode<Q>* next){
+QNode<Q>::QNode(Q data, QNode<Q>* next){
     this->data=data;
     if(next!=NULL){
         this->next=next;
     }
 }
 template <class Q>
-QueueNode<Q>* QueueNode<Q>::getNextNode(){
+QNode<Q>* QNode<Q>::getNextNode(){
     return this->next;
 }
 
 template <class Q>
-void QueueNode<Q>::setNextNode(QueueNode<Q>* next){
+void QNode<Q>::setNextNode(QNode<Q>* next){
      if(next!=NULL){
         this->next=next;
     }
 }
 
 template <class Q>
-void QueueNode<Q>::setData(Q data){
+void QNode<Q>::setData(Q data){
     this->data=data;
 }
 
 
 template <class Q>
-Q QueueNode<Q>::getData(){
+Q QNode<Q>::getData(){
    return this->data;
 }
 
 
 
 template<class Q>
-void QueueNode<Q>::print(){
-    cout<<this->data<<endl;
+void QNode<Q>::print(){
+    cout<<this->data<<endl; 
 }
 template <class Q>
-QueueNode<Q>::~QueueNode(){
+QNode<Q>::~QNode(){
     next=NULL;
 }
