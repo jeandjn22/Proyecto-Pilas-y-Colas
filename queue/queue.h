@@ -2,8 +2,8 @@
 template<class Q>
 class Queue{
     private:
-        QueueNode<Q> *head=NULL;
-        QueueNode<Q> *tail=NULL;
+        QNode<Q> *head=NULL;
+        QNode<Q> *tail=NULL;
         int length=0;
     public:
         int getLength();
