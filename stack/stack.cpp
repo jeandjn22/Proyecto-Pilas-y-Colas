@@ -39,26 +39,23 @@ int stack<T>::getLength(){
     return this->length;
 }
 
-// Función para ordenar la pila en orden ascendente utilizando dos pilas auxiliares
+// Funcion para ordenar la pila en orden ascendente utilizando dos pilas auxiliares
 template<class T>
 void stack<T>::stackAsc() {
-    stack<T> tempStack1, tempStack2;
+    stack<T> tempStack;
     while (!isEmpty()) {
         T temp = pop();
-        while (!tempStack1.isEmpty() && tempStack1.head->getData() > temp) {
-            tempStack2.push(tempStack1.pop());
+        while (!tempStack.isEmpty() && tempStack.head->getData() > temp) {
+            push(tempStack.pop());
         }
-        tempStack1.push(temp);
-        while (!tempStack2.isEmpty()) {
-            tempStack1.push(tempStack2.pop());
-        }
+        tempStack.push(temp);
     }
-    while (!tempStack1.isEmpty()) {
-        push(tempStack1.pop());
+    while (!tempStack.isEmpty()) {
+        push(tempStack.pop());
     }
 }
 
-// Función para ordenar la pila en orden descendente utilizando dos pilas auxiliares
+// Funcion para ordenar la pila en orden descendente utilizando dos pilas auxiliares
 template<class T>
 void stack<T>::stackDesc() {
     stack<T> tempStack1, tempStack2;
