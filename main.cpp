@@ -30,7 +30,7 @@ int main() {
                 stack<int> myStack;
                 int value;
 
-                cout << "Ingrese los numeros para la pila (finalice con una letra para cerrar la pila): " << endl;
+                cout << "Ingrese los numeros para la pila (finalice con una letra para cerrar la pila Y): " << endl;
                 while (cin >> value) {
                     myStack.push(value);
                 }
@@ -57,7 +57,7 @@ int main() {
                 Queue<int> myQueue;
                 int value;
 
-                cout << "Ingrese los numeros para la cola (finalice con una letra): " << endl;
+                cout << "Ingrese los numeros para la cola (finalice con una letra Y): " << endl;
                 while (cin >> value) {
                     myQueue.push(value);
                 }
